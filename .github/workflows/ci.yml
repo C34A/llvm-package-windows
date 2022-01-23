@@ -9,9 +9,9 @@ jobs:
         name: Windows Build
         runs-on: windows-2016
         env:
-            BUILD_PROJECT: clang
-            BUILD_MASTER: false
-            LLVM_VERSION: 11.1.0
+            BUILD_PROJECT: llvm
+            BUILD_MASTER: true
+            LLVM_VERSION: 12.0.1
 
         strategy:
             fail-fast: false
