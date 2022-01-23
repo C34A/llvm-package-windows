@@ -10,8 +10,8 @@ jobs:
         runs-on: windows-2016
         env:
             BUILD_PROJECT: llvm
-            BUILD_MASTER: true
-            LLVM_VERSION: 12.0.1
+            BUILD_MASTER: false
+            LLVM_VERSION: 13.0.0
 
         strategy:
             fail-fast: false
