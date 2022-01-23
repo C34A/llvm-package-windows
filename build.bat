@@ -41,6 +41,15 @@ cmake --build . --target install %CMAKE_BUILD_FLAGS%
 
 cd %THIS_DIR%
 
+echo BUILD DEBUG INFO
+
+echo %GITHUB_WORKSPACE%\%CLANG_RELEASE_FILE%
+echo %CLANG_RELEASE_NAME%
+
+dir
+
+echo END BUILD DEBUG INFO
+
 7z a -t7z %GITHUB_WORKSPACE%\%CLANG_RELEASE_FILE% %CLANG_RELEASE_NAME%
 
 goto :eof
