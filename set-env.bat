@@ -15,10 +15,10 @@ if /i "%1" == "i386" goto :x86
 if /i "%1" == "amd64" goto :amd64
 if /i "%1" == "x86_64" goto :amd64
 if /i "%1" == "x64" goto :amd64
-if /i "%1" == "msvc10" goto :msvc10
-if /i "%1" == "msvc12" goto :msvc12
-if /i "%1" == "msvc14" goto :msvc14
-if /i "%1" == "msvc15" goto :msvc15
+@REM if /i "%1" == "msvc10" goto :msvc10
+@REM if /i "%1" == "msvc12" goto :msvc12
+@REM if /i "%1" == "msvc14" goto :msvc14
+@REM if /i "%1" == "msvc15" goto :msvc15
 if /i "%1" == "msvc16" goto :msvc16
 if /i "%1" == "libcmt" goto :libcmt
 if /i "%1" == "msvcrt" goto :msvcrt
@@ -42,7 +42,7 @@ goto :loop
 
 :amd64
 set TARGET_CPU=amd64
-set CMAKE_GENERATOR_SUFFIX= Win64
+set CMAKE_GENERATOR_SUFFIX=
 shift
 goto :loop
 
@@ -138,7 +138,7 @@ if /i "%BUILD_MASTER%" == "true" (
 )
 
 if "%TARGET_CPU%" == "" goto :amd64
-if "%TOOLCHAIN%" == "" goto :msvc14
+if "%TOOLCHAIN%" == "" goto :msvc16
 if "%CRT%" == "" goto :libcmt
 if "%CONFIGURATION%" == "" goto :release
 
